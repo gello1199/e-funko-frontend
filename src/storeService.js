@@ -1,4 +1,4 @@
-class storeService {
+class StoreService {
     constructor(port) {
         this.port = port
     }
