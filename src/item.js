@@ -6,6 +6,10 @@ class Item {
         this.description = description;
         this.image = image;
         this.category_id = category_id;
-
+        this.element = document.createElement('li');
+        this.element.dataset['id'] = id;
+        this.element.id = `item-${id}`;
+        debugger
     }
+
 }

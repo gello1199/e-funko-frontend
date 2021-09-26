@@ -4,6 +4,6 @@ const storeCall = new StoreService(port)
 const itemCall = new ItemService(port)
 
 
-categoryCall.getCategories();
+// categoryCall.getCategories();
 itemCall.getItems();
-storeCall.getStores();
+// storeCall.getStores();
