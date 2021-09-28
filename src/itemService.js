@@ -15,15 +15,15 @@ class ItemService {
     }
 
     createItems() {
-        // const itemInfo = {
-        //     item: {
-        //         name:,
-        //         price:,
-        //         description:,
-        //         image:,
-        //         category_id:,
-        //     }
-        // }
+        const itemInfo = {
+            item: {
+                name: itemNameValue.value,
+                price:itemPriceValue,
+                description:itemDescriptionValue,
+                image:itemImageValue,
+                category_id:,
+            }
+        }
         debugger
         fetch(this.port + `/items`)
         .then(resp => resp.json())
