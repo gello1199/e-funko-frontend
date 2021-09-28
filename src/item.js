@@ -1,5 +1,6 @@
 class Item {
     static all = [];
+    static container = document.getElementById(`items-container`)
     constructor({name, id, price, description, image, category_id}) {
         this.name = name;
         this.id = id;
@@ -18,12 +19,17 @@ class Item {
         this.element.innerHTML = `
         <div data-id="${this.id}">
         <h3 class="name">${this.name}</h3>
-        <p class="price">${this.price}</p>
+        <p class="price">$ ${this.price}</p>
         <p class="description">${this.description}</p>
-        <p class="image">${this.image}</p>
+        <img src="${this.image}" class="image">
         </div>
         `
         return this.element
+    }
+
+    appendToDom() {
+        // debugger
+        Item.container.appendChild(this.renderToLi())
     }
     
 }
