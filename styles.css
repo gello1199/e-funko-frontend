@@ -6,3 +6,16 @@ body {
     height: 300px;
     width: 200px;
 }
+
+.id {
+   border-style: solid;
+   padding: 10px;
+}
+
+.edit {
+    padding: 10px;
+}
+
+.delete {
+    padding: 10px;
+}
