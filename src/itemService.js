@@ -13,4 +13,21 @@ class ItemService {
             }
         })
     }
+
+    createItems() {
+        // const itemInfo = {
+        //     item: {
+        //         name:,
+        //         price:,
+        //         description:,
+        //         image:,
+        //         category_id:,
+        //     }
+        // }
+        debugger
+        fetch(this.port + `/items`)
+        .then(resp => resp.json())
+        .then(data => console.log(data))
+        
+    }
 }

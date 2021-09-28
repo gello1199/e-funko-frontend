@@ -4,6 +4,7 @@ const storeCall = new StoreService(port)
 const itemCall = new ItemService(port)
 const form = document.getElementById("item-form")
 const dropDown = document.getElementById("category-dropdown")
+const itemNameValue = document.getElementById("item-name");
 
 
 // categoryCall.getCategories();
@@ -11,6 +12,9 @@ itemCall.getItems();
 // storeCall.getStores();
 
 form.addEventListener(`submit`, handleSubmit)
+
 function handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
+    itemCall.createItems()
+    // debugger
 }
