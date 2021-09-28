@@ -36,7 +36,10 @@ class ItemService {
         // debugger
         fetch(this.port + `/items`, configObject)
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => {
+            const newItem = new Item(data)
+            newItem.appendToDom()
+        })
         
     }
 }
