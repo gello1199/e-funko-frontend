@@ -8,7 +8,7 @@ class Item {
         this.description = description;
         this.image = image;
         this.category_id = category_id;
-        this.element = document.createElement('li');
+        this.element = document.createElement('div');
         this.element.dataset['id'] = id;
         this.element.id = `item-${id}`;
         Item.all.push(this)

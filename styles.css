@@ -19,3 +19,7 @@ body {
 .delete {
     padding: 10px;
 }
+
+ul {
+    list-style: none;
+}
