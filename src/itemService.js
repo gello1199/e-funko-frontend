@@ -21,10 +21,10 @@ class ItemService {
                 price:itemPriceValue,
                 description:itemDescriptionValue,
                 image:itemImageValue,
-                category_id:,
+                category_id: dropDown.value,
             }
         }
-        debugger
+        // debugger
         fetch(this.port + `/items`)
         .then(resp => resp.json())
         .then(data => console.log(data))
