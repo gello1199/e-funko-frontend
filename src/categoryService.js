@@ -6,6 +6,13 @@ class CategoryService {
     getCategories() {
         fetch(this.port + `/categories`)
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => {
+            for(const cat of data) {
+                // debugger
+                let c = new Category(cat)
+                c.addToDropdown()
+                // debugger
+            }
+        })
     }
 }

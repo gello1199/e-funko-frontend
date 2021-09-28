@@ -10,7 +10,7 @@ const itemDescriptionValue = document.getElementById("item-description");
 const itemImageValue = document.getElementById("item-image");
 
 
-// categoryCall.getCategories();
+categoryCall.getCategories();
 itemCall.getItems();
 // storeCall.getStores();
 

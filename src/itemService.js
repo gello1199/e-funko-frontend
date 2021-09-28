@@ -18,9 +18,9 @@ class ItemService {
         const itemInfo = {
             item: {
                 name: itemNameValue.value,
-                price:itemPriceValue,
-                description:itemDescriptionValue,
-                image:itemImageValue,
+                price:itemPriceValue.value,
+                description:itemDescriptionValue.value,
+                image:itemImageValue.value,
                 category_id: dropDown.value,
             }
         }
