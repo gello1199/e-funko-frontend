@@ -9,3 +9,8 @@ const dropDown = document.getElementById("category-dropdown")
 // categoryCall.getCategories();
 itemCall.getItems();
 // storeCall.getStores();
+
+form.addEventListener(`submit`, handleSubmit)
+function handleSubmit(e) {
+    e.preventDefault()
+}
