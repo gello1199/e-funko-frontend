@@ -24,8 +24,17 @@ class ItemService {
                 category_id: dropDown.value,
             }
         }
+        const configObject = {
+            method: `POST`,
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(itemInfo)
+        }
+
         // debugger
-        fetch(this.port + `/items`)
+        fetch(this.port + `/items`, configObject)
         .then(resp => resp.json())
         .then(data => console.log(data))
         
