@@ -48,7 +48,7 @@ class ItemService {
         const id = e.target.dataset.id
         e.target.parentElement.remove()
 
-        fetch(this.port + `/items`, configObject)
+        fetch(this.port + `/items/${id}`, {method: `DELETE`})
         .then(resp => resp.json())
         .then(data => alert(data.message))
 
