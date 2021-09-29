@@ -32,14 +32,21 @@ class Item {
         return this.element
     }
 
-    handleClick(e) {
+    // use arrow function to define this on declaration, not execution
+    handleClick = (e) => { 
         if(e.target.innerText === "Edit") {
             console.log(e.target);
+            // debugger
+            this.createEditForm()
         } else if(e.target.innerText === "Delete") {
             console.log(e.target)
         } else if(e.target.innerText === "Save Item") {
             console.log(e.target)
         }
+    }
+
+    createEditForm(){
+        debugger
     }
 
     appendToDom() {
