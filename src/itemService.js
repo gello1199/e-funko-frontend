@@ -42,4 +42,15 @@ class ItemService {
         })
         
     }
+
+    deleteItem(e) {
+// debugger
+        const id = e.target.dataset.id
+        e.target.parentElement.remove()
+
+        fetch(this.port + `/items`, configObject)
+        .then(resp => resp.json())
+        .then(data => alert(data.message))
+
+    }
 }

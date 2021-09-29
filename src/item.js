@@ -13,21 +13,23 @@ class Item {
         this.element.id = `item-${id}`;
         this.element.addEventListener(`click`, this.handleClick)
 
+
         Item.all.push(this)
         // debugger
     }
 
     renderToLi() {
         this.element.innerHTML = `
-        <div class="id" data-id="${this.id}">
+        <div class="item-container" data-id="${this.id}">
         <h3 class="name">Name: ${this.name}</h3>
         <p class="price">Price: $ ${this.price}</p>
         <p class="description">Description: ${this.description}</p>
         <img src="${this.image}" class="image"> <br><br>
+        </div>
+
         <button class="edit" data-id="${this.id}">Edit</button>
         <button class="delete" data-id="${this.id}">Delete</button>
-
-        </div>
+       
         `
         return this.element
     }
@@ -40,14 +42,23 @@ class Item {
             this.createEditForm()
         } else if(e.target.innerText === "Delete") {
             console.log(e.target)
+            itemCall.deleteItem(e)
         } else if(e.target.innerText === "Save Item") {
             console.log(e.target)
         }
     }
 
-    createEditForm(){
-        debugger
-    }
+    // createEditForm(){
+    //     const div = this.element.querySelector('div')
+    //     for(const element of div.children) {
+            
+    //         // let inputValue = element.innerText;
+    //         // let name = element.classList[0];
+    //         // element.outerHTML = `<input type="text" class="edit"`
+    //         // this.element.querySelector('div').children[0].innerHTML.split(' ')[1]
+    //     }
+    //     // debugger
+    // }
 
     appendToDom() {
         // debugger
