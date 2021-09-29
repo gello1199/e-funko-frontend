@@ -48,31 +48,24 @@ class Item {
         }
     }
 
-    // handleClick = (e) => {
-    //     if(e.target.innerText === "Delete") {
-    //         itemCall.deleteItem(e)
-    //     }
-    // }
-
     createEditForm(){
         const div = this.element.querySelector('div')
         const nameValue = div.children[0].innerText.split(' ')[1]
         div.children[0].outerHTML = `Name: <input value="${nameValue}">`
         const priceValue = div.children[1].innerText.split(' ')[2]
         div.children[1].outerHTML = `Price: <input value="${priceValue}">`
-        const descriptionValue = div.children[2].innerText.split(' ')
+        const descriptionValue = div.children[2].innerText.split(':')[1]
         div.children[2].outerHTML = `Description: <input value="${descriptionValue}">`
-        const imageValue = div.children[3].innerText.split(' ' )[0]
+        const imageValue = div.children[3].src
         div.children[3].outerHTML = `Image: <input value="${imageValue}">`
 
         // for(const element of div.children) {
             
-        //     // let inputValue = element.innerText;
-        //     // let name = element.classList[0];
-        //     // element.outerHTML = `<input type="text" class="edit"`
-            // this.element.querySelector('div').children[0].innerHTML.split(' ')[1]
+        //     let inputValue = element.innerText;
+        //     let name = element.classList[0];
+        //     element.outerHTML = `<input type="text" class="edit-${name}" value="${inputValue}"`
         // }
-        // debugger
+        
     }
 
     appendToDom() {
