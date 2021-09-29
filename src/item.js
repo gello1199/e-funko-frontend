@@ -11,6 +11,8 @@ class Item {
         this.element = document.createElement('div');
         this.element.dataset['id'] = id;
         this.element.id = `item-${id}`;
+        this.element.addEventListener(`click`, this.handleClick)
+
         Item.all.push(this)
         // debugger
     }
@@ -22,17 +24,28 @@ class Item {
         <p class="price">Price: $ ${this.price}</p>
         <p class="description">Description: ${this.description}</p>
         <img src="${this.image}" class="image"> <br><br>
-        <button class="edit">Edit</button>
-        <button class="delete">Delete</button>
+        <button class="edit" data-id="${this.id}">Edit</button>
+        <button class="delete" data-id="${this.id}">Delete</button>
 
         </div>
         `
         return this.element
     }
 
+    handleClick(e) {
+        if(e.target.innerText === "Edit") {
+            console.log(e.target);
+        } else if(e.target.innerText === "Delete") {
+            console.log(e.target)
+        } else if(e.target.innerText === "Save Item") {
+            console.log(e.target)
+        }
+    }
+
     appendToDom() {
         // debugger
-        Item.container.appendChild(this.renderToLi())
+        this.renderToLi()
+        Item.container.appendChild(this.element)
     }
     
 }
