@@ -39,6 +39,8 @@ class ItemService {
         .then(data => {
             const newItem = new Item(data)
             newItem.appendToDom()
+            form.reset()
+            alert("Added!")
         })
         
     }
