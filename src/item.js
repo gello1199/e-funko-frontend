@@ -65,7 +65,8 @@ class Item {
     }
 
     createEditForm(){
-        const div = this.element.querySelector('div')
+        const div = this.element.querySelector(`[data-id]`)
+        // debugger
         const nameValue = div.children[0].innerText.split(' ')[1]
         div.children[0].outerHTML = `Name: <input class="edit-name" value="${nameValue}">`
         const priceValue = div.children[1].innerText.split(' ')[2]
