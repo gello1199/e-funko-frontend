@@ -37,12 +37,18 @@ class ItemService {
         fetch(this.port + `/items`, configObject)
         .then(resp => resp.json())
         .then(data => {
-            const newItem = new Item(data)
-            newItem.appendToDom()
-            form.reset()
-            alert("Added!")
+            // debugger
+            if(data.error) {
+                console.log(error)
+            } else {
+                const newItem = new Item(data)
+                newItem.appendToDom()
+                form.reset()
+                // alert("Added!")
+            }
+         
         })
-        
+        .catch(error => console.log(error))
     }
 
     updateItem(item) {

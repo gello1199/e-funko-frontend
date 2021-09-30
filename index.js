@@ -8,11 +8,10 @@ const itemNameValue = document.getElementById("item-name");
 const itemPriceValue = document.getElementById("item-price");
 const itemDescriptionValue = document.getElementById("item-description");
 const itemImageValue = document.getElementById("item-image");
-const modal = document.querySelector('#items-form-hidden');
+const modal = document.querySelector('.hidden');
 const overlay = document.querySelector('.overlay');
 const closeModal = document.querySelector('.close-modal');
 const openModal = document.querySelector('.new-item')
-console.log(openModal)
 
 
 categoryCall.getCategories();
@@ -23,6 +22,19 @@ form.addEventListener(`submit`, handleSubmit)
 
 function handleSubmit(e) {
     e.preventDefault();
+    modal.classList.add('hidden')
+    overlay.classList.add('hidden')
     itemCall.createItems()
     // debugger
 }
+
+openModal.addEventListener(`click`, function(){
+    console.log('button clicked')
+    modal.classList.remove('hidden')
+    overlay.classList.remove('hidden')
+})
+
+closeModal.addEventListener(`click`, function(){
+    modal.classList.add('hidden')
+    overlay.classList.add('hidden')
+})
