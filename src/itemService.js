@@ -55,8 +55,23 @@ class ItemService {
             id
         }
 
+        const configObject = {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            }, 
+            body: JSON.stringify(itemInfo)
+        }
+        fetch(this.port + `/items/${id}`, configObject)
+        .then(resp => resp.json())
+        .then(data => {
+            // const newItem = new Item(data)
+            newItem.appendToDom()
+            // form.reset()
+            alert("Changed!")
+        })
         
-        debugger
     }
 
 
