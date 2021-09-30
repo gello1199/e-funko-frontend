@@ -36,10 +36,12 @@ class Item {
 
     updateItemInfo() {
         // debugger
-        this.name = this.element.querySelector(`.edit-name`);
-        this.price = this.element.querySelector(`.edit-price`);
-        this.description = this.element.querySelector(`.edit-description`);
-        this.image = this.element.querySelector(`.edit-image`);
+        this.name = this.element.querySelector(`.edit-name`).value;
+        this.price = this.element.querySelector(`.edit-price`).value;
+        this.description = this.element.querySelector(`.edit-description`).value;
+        this.image = this.element.querySelector(`.edit-image`).value;
+        // debugger
+        itemCall.updateItem(this)
 
     }
 

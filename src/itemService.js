@@ -45,6 +45,20 @@ class ItemService {
         
     }
 
+    updateItem(item) {
+        const {name, price, description, image, id} = item
+        const itemInfo = {
+            name,
+            price,
+            description,
+            image,
+            id
+        }
+
+        
+        debugger
+    }
+
 
     deleteItem(e) {
 // debugger
