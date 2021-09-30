@@ -36,23 +36,27 @@ class Item {
 
     updateItemInfo() {
         // debugger
+        this.name = this.element.querySelector(`.edit-name`);
+        this.price = this.element.querySelector(`.edit-price`);
+        this.description = this.element.querySelector(`.edit-description`);
+        this.image = this.element.querySelector(`.edit-image`);
 
     }
 
     // use arrow function to define this on declaration, not execution
     handleClick = (e) => { 
         if(e.target.innerText === "Edit") {
-            console.log(e.target);
+            // console.log(e.target);
             // debugger
             e.target.innerText = "Save Item"
             this.createEditForm()
         } else if(e.target.innerText === "Delete") {
-            console.log(e.target)
+            // console.log(e.target)
             itemCall.deleteItem(e)
         } else if(e.target.innerText === "Save Item") {
             e.target.innerText = "Edit"
             this.updateItemInfo()
-            console.log(e.target)
+            // console.log(e.target)
         }
     }
 
