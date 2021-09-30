@@ -34,16 +34,24 @@ class Item {
         return this.element
     }
 
+    updateItemInfo() {
+        // debugger
+
+    }
+
     // use arrow function to define this on declaration, not execution
     handleClick = (e) => { 
         if(e.target.innerText === "Edit") {
             console.log(e.target);
             // debugger
+            e.target.innerText = "Save Item"
             this.createEditForm()
         } else if(e.target.innerText === "Delete") {
             console.log(e.target)
             itemCall.deleteItem(e)
         } else if(e.target.innerText === "Save Item") {
+            e.target.innerText = "Edit"
+            this.updateItemInfo()
             console.log(e.target)
         }
     }
@@ -51,20 +59,13 @@ class Item {
     createEditForm(){
         const div = this.element.querySelector('div')
         const nameValue = div.children[0].innerText.split(' ')[1]
-        div.children[0].outerHTML = `Name: <input value="${nameValue}">`
+        div.children[0].outerHTML = `Name: <input class="edit-name" value="${nameValue}">`
         const priceValue = div.children[1].innerText.split(' ')[2]
-        div.children[1].outerHTML = `Price: <input value="${priceValue}">`
+        div.children[1].outerHTML = `Price: <input class="edit-price" value="${priceValue}">`
         const descriptionValue = div.children[2].innerText.split(':')[1]
-        div.children[2].outerHTML = `Description: <input value="${descriptionValue}">`
+        div.children[2].outerHTML = `Description: <input class="edit-description" value="${descriptionValue}">`
         const imageValue = div.children[3].src
-        div.children[3].outerHTML = `Image: <input value="${imageValue}">`
-
-        // for(const element of div.children) {
-            
-        //     let inputValue = element.innerText;
-        //     let name = element.classList[0];
-        //     element.outerHTML = `<input type="text" class="edit-${name}" value="${inputValue}"`
-        // }
+        div.children[3].outerHTML = `Image: <input class="edit-image" value="${imageValue}">`
         
     }
 

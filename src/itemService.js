@@ -45,6 +45,7 @@ class ItemService {
         
     }
 
+
     deleteItem(e) {
 // debugger
         const id = e.target.dataset.id
