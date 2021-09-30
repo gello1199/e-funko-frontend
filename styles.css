@@ -2,14 +2,26 @@ body {
     text-align: center;
 }
 
+#wrapper {
+    background-color: lightblue;
+}
+
 .image {
-    height: 300px;
-    width: 200px;
+    height: auto;
+    width: 25%;
 }
 
 .item-container {
    border-style: solid;
-   padding: 10px;
+   background-color: white;
+   width: 50%;
+   display: inline-block;
+}
+
+.item-big-container {
+    text-align: center;
+    width: 100%;
+    /* background-color: lightblue; */
 }
 
 .edit {
@@ -43,3 +55,6 @@ ul {
   .nav-li a:hover {
     background-color: #111;
   }
+
+
+

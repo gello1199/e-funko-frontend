@@ -11,6 +11,7 @@ class Item {
         this.element = document.createElement('div');
         this.element.dataset['id'] = id;
         this.element.id = `item-${id}`;
+        this.element.className = "item-big-container"
         this.element.addEventListener(`click`, this.handleClick)
 
 
@@ -20,16 +21,17 @@ class Item {
 
     renderToLi() {
         this.element.innerHTML = `
-        <div class="item-container" data-id="${this.id}">
+        <div class="item-container">
+        <div data-id="${this.id}">
         <h3 class="name">Name: ${this.name}</h3>
         <p class="price">Price: $ ${this.price}</p>
         <p class="description">Description: ${this.description}</p>
         <img src="${this.image}" class="image"> <br><br>
         </div>
-
+        
         <button class="edit" data-id="${this.id}">Edit</button>
         <button class="delete" data-id="${this.id}">Delete</button>
-       
+        </div>
         `
         return this.element
     }
