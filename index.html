@@ -18,12 +18,14 @@
 <body>
     <ul class="nav-ul">
         <li class="nav-li">E-Funko Shop</li>
+        <button class="new-item">Add Item</button>
     </ul>
     <!-- <h1>E-Funko Shop</h1> -->
 <!-- <div id="store-container"></div> -->
 <div id="wrapper">
 <div id="categories-container"></div>
-<div id="items-form">
+<div id="items-form-hidden">
+    <button class="close-modal">&times;</button>
     <h3>Add A New Toy</h3>
     <form id="item-form">
         <label for="item-name">Name:</label>
@@ -45,5 +47,6 @@
 </div>
 <div id="items-container"></div>
 </div>
+<div class="overlay hidden"></div>
 </body>
 </html>
