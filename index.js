@@ -29,7 +29,7 @@ function handleSubmit(e) {
 }
 
 openModal.addEventListener(`click`, function(){
-    console.log('button clicked')
+    // console.log('button clicked')
     modal.classList.remove('hidden')
     overlay.classList.remove('hidden')
 })

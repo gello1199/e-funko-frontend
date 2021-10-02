@@ -39,7 +39,9 @@ class ItemService {
         .then(data => {
             // debugger
             if(data.error) {
-                console.log(error)
+                // console.log(error)
+                // data.error.forEach(error => alert(error))
+                alert(data.error.join(', '))
             } else {
                 const newItem = new Item(data)
                 newItem.appendToDom()
