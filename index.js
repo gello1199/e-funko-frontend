@@ -8,6 +8,7 @@ const itemNameValue = document.getElementById("item-name");
 const itemPriceValue = document.getElementById("item-price");
 const itemDescriptionValue = document.getElementById("item-description");
 const itemImageValue = document.getElementById("item-image");
+const categoryNameValue = document.getElementById("category-name")
 const modal = document.querySelector('.hidden');
 const overlay = document.querySelector('.overlay');
 const closeModal = document.querySelector('.close-modal');

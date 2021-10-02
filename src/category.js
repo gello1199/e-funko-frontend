@@ -1,9 +1,8 @@
 class Category {
-    constructor({name, id, store_id}) {
+    constructor({name, id}) {
         // debugger
         this.name = name;
         this.id = id;
-        this.store_id = store_id;
     }
 
     addToDropdown() {

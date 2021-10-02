@@ -22,6 +22,7 @@ class ItemService {
                 description:itemDescriptionValue.value,
                 image:itemImageValue.value,
                 category_id: dropDown.value,
+                category_name: categoryNameValue.value 
             }
         }
         const configObject = {
@@ -39,14 +40,12 @@ class ItemService {
         .then(data => {
             // debugger
             if(data.error) {
-                // console.log(error)
-                // data.error.forEach(error => alert(error))
                 alert(data.error.join(', '))
             } else {
                 const newItem = new Item(data)
                 newItem.appendToDom()
                 form.reset()
-                // alert("Added!")
+                alert("Added!")
             }
          
         })
