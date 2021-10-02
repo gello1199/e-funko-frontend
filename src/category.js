@@ -3,6 +3,7 @@ class Category {
         // debugger
         this.name = name;
         this.id = id;
+        this.active = false
     }
 
     addToDropdown() {
