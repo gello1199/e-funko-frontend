@@ -3,6 +3,7 @@ class Category {
         // debugger
         this.name = name;
         this.id = id;
+
     }
 
     addToDropdown() {
@@ -13,11 +14,11 @@ class Category {
         // debugger
     }
 
-    addToCatDropDown() {
-        const option = document.createElement(`option`);
-        option.value = this.id
-        option.innerText = this.name
-        catDropDown.appendChild(option)
-        debugger
-    }
+    // addToCatDropDown() {
+    //     const option = document.createElement(`option`);
+    //     option.value = this.id
+    //     option.innerText = this.name
+    //     catDropDown.appendChild(option)
+    //     // debugger
+    // }
 }
