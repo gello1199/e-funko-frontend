@@ -9,8 +9,6 @@
     <script defer src="src/categoryService.js"></script>
     <script defer src="src/item.js"></script>
     <script defer src="src/itemService.js"></script>
-    <script defer src="src/store.js"></script>
-    <script defer src="src/storeService.js"></script>
     <script defer src="index.js"></script>
 
     <title>E-Funko</title>
@@ -19,9 +17,11 @@
     <ul class="nav-ul">
         <li class="nav-li">E-Funko Shop</li>
         <button class="new-item">Add Item</button>
+        <div class="cat-dropdown">
+        Filter by Category: <select name="category_id" id="category-dropdown"></select>
+        </div>
     </ul>
-    <!-- <h1>E-Funko Shop</h1> -->
-<!-- <div id="store-container"></div> -->
+
 <div id="wrapper">
 <div id="categories-container"></div>
     <div class="items-form hidden modal">
@@ -36,8 +36,8 @@
         <input type="textbox" name="description" id="item-description"><br><br>
         <label for="item-image">Image URL:</label>
         <input type="text" name="image" id="item-image"><br><br>
-        Category: <input type="text" name="category" id="category-name">
-        <select name="category_id" id="category-dropdown">
+        Create Category: <input type="text" name="category" id="category-name"><br><br>
+        Select Category: <select name="category_id" id="category-dropdown">
         
 
         </select> <br><br>
