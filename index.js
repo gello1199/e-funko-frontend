@@ -1,9 +1,8 @@
 const port = `http://localhost:3000`
 const categoryCall = new CategoryService(port); // an instance to call methods on
 const itemCall = new ItemService(port);
-const form = document.getElementById("item-form");
-const dropDown = document.getElementById("category-dropdown");
-const catDropDown = document.getElementById("cat-dropdown")
+const form = document.getElementById("item-form")
+const dropDown = document.getElementById("category-form-dropdown");
 const itemNameValue = document.getElementById("item-name");
 const itemPriceValue = document.getElementById("item-price");
 const itemDescriptionValue = document.getElementById("item-description");
@@ -17,7 +16,6 @@ const openModal = document.querySelector('.new-item')
 
 categoryCall.getCategories();
 itemCall.getItems();
-// storeCall.getStores();
 
 form.addEventListener(`submit`, handleSubmit)
 
@@ -30,7 +28,6 @@ function handleSubmit(e) {
 }
 
 openModal.addEventListener(`click`, function(){
-    // console.log('button clicked')
     modal.classList.remove('hidden')
     overlay.classList.remove('hidden')
 })

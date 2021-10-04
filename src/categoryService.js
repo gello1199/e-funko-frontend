@@ -11,6 +11,7 @@ class CategoryService {
                 // debugger
                 let c = new Category(cat)
                 c.addToDropdown()
+                c.addToCatFormDropdown()
                 // debugger
             }
         })
