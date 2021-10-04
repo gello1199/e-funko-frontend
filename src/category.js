@@ -7,8 +7,22 @@ class Category {
         // debugger
         this.name = name;
         this.id = id;
-
         Category.all.push(this)
+        this.element = document.getElementById("category-dropdown")
+        
+        
+        // debugger
+    }  
+    
+    catFilter() {
+        let filteredCategory
+        Category.all.forEach(c => {
+            if(c.element === this.element){
+                filteredCategory = c;
+                // debugger
+            }
+            Item.filterByCategory(filteredCategory)
+        })
     }
 
     addToDropdown() {

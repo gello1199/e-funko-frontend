@@ -13,10 +13,22 @@ class Item {
         this.element.id = `item-${id}`;
         this.element.className = "item-big-container"
         this.element.addEventListener(`click`, this.handleClick)
-
-
         Item.all.push(this)
         // debugger
+    }
+
+    static filterByCategory(filteredCategory) {
+        // debugger
+        if(filteredCategory) {
+            Item.all.filter((i) => {
+                // debugger
+                // i.category_id === filteredCategory.id
+                // debugger
+
+            })
+        }else{
+
+        }
     }
 
     renderToLi() {
