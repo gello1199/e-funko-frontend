@@ -33,7 +33,10 @@ class Item {
                 i.appendToDom()
             }
         }else{
-
+            Item.container.innerHTML = "";
+            for(const i of Item.all) {
+                i.appendToDom()
+            }
         }
     }
 
