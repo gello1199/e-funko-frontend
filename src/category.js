@@ -10,19 +10,27 @@ class Category {
         Category.all.push(this)
         this.element = document.getElementById("category-dropdown")
         
-        
         // debugger
     }  
+
+    addListeners() {
+        this.element.addEventListener('change', this.catFilter)
+    }
     
-    catFilter() {
+    catFilter = (e) => {
         let filteredCategory
-        Category.all.forEach(c => {
-            if(c.element === this.element){
+        // debugger
+        for(const c of Category.all) {
+            // debugger
+            if(c.id === parseInt(e.target.value)){
+                // debugger
                 filteredCategory = c;
                 // debugger
             }
-            Item.filterByCategory(filteredCategory)
-        })
+            // debugger 
+        }
+        // debugger
+        Item.filterByCategory(filteredCategory)
     }
 
     addToDropdown() {

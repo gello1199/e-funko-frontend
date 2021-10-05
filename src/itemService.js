@@ -11,6 +11,7 @@ class ItemService {
                 let i = new Item(item)
                 i.appendToDom()
             }
+            // Item.filterByCategory(filteredCategory)
         })
     }
 
@@ -46,6 +47,7 @@ class ItemService {
                 newItem.appendToDom()
                 form.reset()
                 alert("Added!")
+              
             }
          
         })
@@ -73,7 +75,7 @@ class ItemService {
         fetch(this.port + `/items/${id}`, configObject)
         .then(resp => resp.json())
         .then(data => {
-            item.appendToDom()
+            item.appendToDom() 
             alert("Changed!")
         })
         

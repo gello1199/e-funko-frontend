@@ -12,7 +12,7 @@ class CategoryService {
                 let c = new Category(cat)
                 c.addToDropdown()
                 c.addToCatFormDropdown()
-                c.catFilter()
+                c.addListeners()
                 // debugger
             }
         })

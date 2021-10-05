@@ -7,7 +7,7 @@ class Item {
         this.price = price;
         this.description = description;
         this.image = image;
-        this.category_id = category_id;
+        this.categoryId = category_id;
         this.element = document.createElement('div');
         this.element.dataset['id'] = id;
         this.element.id = `item-${id}`;
@@ -20,12 +20,13 @@ class Item {
     static filterByCategory(filteredCategory) {
         // debugger
         if(filteredCategory) {
-            Item.all.filter((i) => {
+            const filteredItems = Item.all.filter((i) => {
                 // debugger
-                // i.category_id === filteredCategory.id
+                return i.categoryId === filteredCategory.id
                 // debugger
 
             })
+            debugger
         }else{
 
         }
