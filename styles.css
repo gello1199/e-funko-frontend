@@ -4,7 +4,10 @@ body {
 }
 
 #wrapper {
-    background-color: rgb(228, 240, 245);
+    background-image: url("https://images.unsplash.com/photo-1606702605033-fd1a246a5016?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8ZnVua298fHx8fHwxNjMzNDQ1MTUx&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600");
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .image {
@@ -19,9 +22,11 @@ body {
 .item-container {
    border-style: solid;
    background-color: white;
-   width: 50%;
+   width: 35%;
    display: inline-block;
    padding: 10px;
+   border-radius: 3%;
+   opacity: 90%;
 }
 
 .item-big-container {
