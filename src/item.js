@@ -26,7 +26,12 @@ class Item {
                 // debugger
 
             })
-            debugger
+            // debugger
+            Item.container.innerHTML = "";
+            for(const i of filteredItems) {
+                // debugger
+                i.appendToDom()
+            }
         }else{
 
         }
