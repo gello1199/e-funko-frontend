@@ -1,3 +1,5 @@
+// let option = document.createElement(`option`);
+
 class Category {
     static all = []
 
@@ -34,22 +36,25 @@ class Category {
     }
 
     addToDropdown() {
-        const option = document.createElement(`option`);
-        option.value = this.id
-        option.innerText = this.name
+        // const option = document.createElement(`option`);
+        // option
+        // option.value = this.id
+        // option.innerText = this.name
         // debugger
-        dropDown.appendChild(option)
+        dropDown.appendChild(this.setOption())
         // debugger
     }
 
     addToCatFormDropdown() {
-        const option = document.createElement(`option`);
-        option.value = this.id
-        option.innerText = this.name        
-        // debugger
-        Category.catContainer.appendChild(option)
+        Category.catContainer.appendChild(this.setOption())
         // debugger
     }
 
+    setOption = () => {
+        const option = document.createElement(`option`);
+        option.value = this.id
+        option.innerText = this.name 
+        return option
+    }
 
 }

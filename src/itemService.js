@@ -24,6 +24,7 @@ class ItemService {
                 image:itemImageValue.value,
                 category_id: dropDown.value,
                 category_name: categoryNameValue.value 
+                // need to nest itemInfo inside item: for backend to read category_id and category_name 
             }
         }
         const configObject = {
@@ -44,6 +45,14 @@ class ItemService {
                 alert(data.error.join(', '))
             } else {
                 const newItem = new Item(data)
+                // debugger
+                const newCat = Category.all.find(c => c.id === newItem.categoryId)
+                if(!newCat) {
+                    let catObject = new Category({id: data.category.id, name: data.category.name}) 
+                    catObject.addToDropdown()
+                    catObject.addToCatFormDropdown()
+                    // debugger
+                }
                 newItem.appendToDom()
                 form.reset()
                 alert("Added!")
