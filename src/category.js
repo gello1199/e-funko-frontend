@@ -36,11 +36,6 @@ class Category {
     }
 
     addToDropdown() {
-        // const option = document.createElement(`option`);
-        // option
-        // option.value = this.id
-        // option.innerText = this.name
-        // debugger
         dropDown.appendChild(this.setOption())
         // debugger
     }
