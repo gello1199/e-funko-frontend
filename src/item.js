@@ -13,6 +13,7 @@ class Item {
         this.element.id = `item-${id}`;
         this.element.className = "item-big-container"
         this.element.addEventListener(`click`, this.handleClick)
+        this.likes = 0;
         Item.all.push(this)
         // debugger
     }
@@ -52,6 +53,7 @@ class Item {
         
         <button class="edit" data-id="${this.id}">Edit</button>
         <button class="delete" data-id="${this.id}">Delete</button>
+        <button class="likes">Likes: ${this.likes}</button>
         </div>
         `
         // debugger
@@ -83,6 +85,11 @@ class Item {
             e.target.innerText = "Edit"
             this.updateItemInfo()
             // console.log(e.target)
+        } else if(e.target.innerText === `Likes: ${this.likes}`) {
+            this.likes ++
+            e.target.innerText = `Likes: ${this.likes}`
+            // debugger
+            console.log(this.likes)
         }
     }
 
