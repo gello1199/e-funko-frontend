@@ -15,7 +15,7 @@ const overlay = document.querySelector('.overlay');
 const closeModal = document.querySelector('.close-modal');
 const openModal = document.querySelector('.new-item')
 
-
+// debugger
 categoryCall.getCategories();
 itemCall.getItems();
 

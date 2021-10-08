@@ -1,25 +1,23 @@
-// let option = document.createElement(`option`);
-
 class Category {
     static all = []
 
     static catContainer = document.getElementById("category-dropdown")
-
+    
     constructor({name, id}) {
         // debugger
         this.name = name;
         this.id = id;
         Category.all.push(this)
-        this.element = document.getElementById("category-dropdown")
         
         // debugger
     }  
 
     addListeners() {
-        this.element.addEventListener('change', this.catFilter)
+        Category.catContainer.addEventListener('change', this.catFilter)
     }
     
     catFilter = (e) => {
+        // debugger
         let filteredCategory
         // debugger
         for(const c of Category.all) {
@@ -42,7 +40,7 @@ class Category {
 
     addToCatFormDropdown() {
         Category.catContainer.appendChild(this.setOption())
-        // debugger
+        // debugger 
     }
 
     setOption = () => {

@@ -7,11 +7,13 @@ class ItemService {
         fetch(this.port + `/items`)
         .then(resp => resp.json())
         .then(data => {
+            // debugger
             for(const item of data) {
+                // debugger
                 let i = new Item(item)
                 i.appendToDom()
+                // debugger
             }
-            // Item.filterByCategory(filteredCategory)
         })
     }
 
@@ -27,6 +29,7 @@ class ItemService {
                 // need to nest itemInfo inside item: for backend to read category_id and category_name 
             }
         }
+        // debugger
         const configObject = {
             method: `POST`,
             headers: {
@@ -46,8 +49,9 @@ class ItemService {
             } else {
                 const newItem = new Item(data)
                 // debugger
-                const newCat = Category.all.find(c => c.id === newItem.categoryId)
-                if(!newCat) {
+                const findCat = Category.all.find(c => c.id === newItem.categoryId)
+                // debugger
+                if(!findCat) {
                     let catObject = new Category({id: data.category.id, name: data.category.name}) 
                     catObject.addToDropdown()
                     catObject.addToCatFormDropdown()
@@ -84,8 +88,12 @@ class ItemService {
         fetch(this.port + `/items/${id}`, configObject)
         .then(resp => resp.json())
         .then(data => {
-            item.appendToDom() 
+            if(data.error){
+                alert(data.error.join(', '))
+            }else {
+                item.renderToLi() 
             alert("Changed!")
+        }
         })
         
     }

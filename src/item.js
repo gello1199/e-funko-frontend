@@ -27,10 +27,10 @@ class Item {
 
             })
             // debugger
-            Item.container.innerHTML = "";
+            Item.container.innerHTML = ""; // blanks out entire page
             for(const i of filteredItems) {
                 // debugger
-                i.appendToDom()
+                i.appendToDom() //appends filteredItems to DOM
             }
         }else{
             Item.container.innerHTML = "";
@@ -54,6 +54,7 @@ class Item {
         <button class="delete" data-id="${this.id}">Delete</button>
         </div>
         `
+        // debugger
         return this.element
     }
 
