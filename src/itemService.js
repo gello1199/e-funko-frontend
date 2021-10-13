@@ -27,6 +27,7 @@ class ItemService {
                 category_id: dropDown.value,
                 category_name: categoryNameValue.value 
                 // need to nest itemInfo inside item: for backend to read category_id and category_name 
+                //passed in as argument of createItems
             }
         }
         // debugger
@@ -45,6 +46,7 @@ class ItemService {
         .then(data => {
             // debugger
             if(data.error) {
+                // debugger
                 alert(data.error.join(', '))
             } else {
                 const newItem = new Item(data)
@@ -52,7 +54,7 @@ class ItemService {
                 const findCat = Category.all.find(c => c.id === newItem.categoryId)
                 // debugger
                 if(!findCat) {
-                    let catObject = new Category({id: data.category.id, name: data.category.name}) 
+                    const catObject = new Category({id: data.category.id, name: data.category.name}) 
                     catObject.addToDropdown()
                     catObject.addToCatFormDropdown()
                     // debugger
@@ -107,6 +109,5 @@ class ItemService {
         fetch(this.port + `/items/${id}`, {method: `DELETE`})
         .then(resp => resp.json())
         .then(data => alert(data.message))
-
     }
 }

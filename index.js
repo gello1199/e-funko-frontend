@@ -9,14 +9,38 @@ const itemPriceValue = document.getElementById("item-price");
 const itemDescriptionValue = document.getElementById("item-description");
 const itemImageValue = document.getElementById("item-image");
 const categoryNameValue = document.getElementById("category-name")
+const searchName = document.getElementById('search-name')
+
+
 
 const modal = document.querySelector('.hidden');
 const overlay = document.querySelector('.overlay');
 const closeModal = document.querySelector('.close-modal');
 const openModal = document.querySelector('.new-item')
 
+searchName.addEventListener('keyup', (e) => {
+const searchValue = e.target.value.toLowerCase()
+const filteredItems = Item.all.filter(item => {
+    return item.name.toLowerCase().includes(searchValue)
+})
+    Item.filterByItem(filteredItems)
+})
+
+
+
 // debugger
-categoryCall.getCategories();
+categoryCall.getCategories()
+.then(data => {
+        for(const cat of data) {
+            // debugger
+            let c = new Category(cat)
+            c.addToDropdown()
+            c.addToCatFormDropdown()
+            c.addListeners()
+            // debugger
+        }
+    })
+
 itemCall.getItems();
 
 form.addEventListener(`submit`, handleSubmit)
@@ -27,6 +51,7 @@ function handleSubmit(e) {
     overlay.classList.add('hidden')
     itemCall.createItems()
     // debugger
+    // creating items and passing it to create items
 }
 
 openModal.addEventListener(`click`, function(){

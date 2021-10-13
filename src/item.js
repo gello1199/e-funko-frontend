@@ -1,6 +1,9 @@
+
 class Item {
     static all = [];
     static container = document.getElementById(`items-container`)
+    // static searchName = document.getElementById('search-name')
+
     constructor({name, id, price, description, image, category_id}) {
         this.name = name;
         this.id = id;
@@ -17,13 +20,30 @@ class Item {
         // debugger
     }
 
+    static filterByItem(filteredItems) {
+        // debugger
+        if(filteredItems) {
+            // debugger
+            Item.container.innerHTML = ""; // blanks out entire page
+            for(const i of filteredItems) {
+                // debugger
+                i.appendToDom() //appends filteredItems to DOM
+            }
+        }else{
+            Item.container.innerHTML = "";
+            for(const i of Item.all) {
+                i.appendToDom()
+            }
+        }
+    }
+  
+    
     static filterByCategory(filteredCategory) {
         // debugger
         if(filteredCategory) {
             const filteredItems = Item.all.filter((i) => {
                 // debugger
                 return i.categoryId === filteredCategory.id
-                // debugger
 
             })
             // debugger
@@ -97,7 +117,7 @@ class Item {
         div.children[2].outerHTML = `Description: <input class="edit-description" value="${descriptionValue}">`
         const imageValue = div.children[3].src
         div.children[3].outerHTML = `Image: <input class="edit-image" value="${imageValue}">`
-        
+        // debugger
     }
 
     appendToDom() {
@@ -107,3 +127,9 @@ class Item {
     }
     
 }
+
+// search by name on change or on click
+// create a text form
+// addeventlistener
+// filter the results
+// display to DOM
