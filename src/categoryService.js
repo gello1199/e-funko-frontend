@@ -6,7 +6,7 @@ class CategoryService {
     getCategories() {
         return fetch(this.port + `/categories`)
         .then(resp => resp.json())
-        // 
+        
     }
 }
 

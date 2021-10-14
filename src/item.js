@@ -2,7 +2,6 @@
 class Item {
     static all = [];
     static container = document.getElementById(`items-container`)
-    // static searchName = document.getElementById('search-name')
 
     constructor({name, id, price, description, image, category_id}) {
         this.name = name;
