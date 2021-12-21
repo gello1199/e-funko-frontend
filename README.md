@@ -3,7 +3,7 @@
 E-Funko
 Welcome to the E-Funko app! This app creates an E-commerce shop where you can view funko-pop characters, edit existing items, delete and add new items. Each item will include a name, price, description and image. You can add a new item by using the hidden form that appears when the "add item" button is clicked. The app also has additional functionality that enlarges the image when a mouse hovers over the image and also a filter where the user can filter by category (i.e. all Marvel characters).
 
-Installation
+# Installation
 
 Please setup backend installation before running the front end. You can find necessary installation guidelines through the Github link below
 
@@ -15,7 +15,7 @@ To run the program:
 
 After taking the necessary steps mentioned in the README on the backend and rails s is running the server, run open index.html to view the web app in the browser.
 
-Usage
+# Usage
 
 See backend README for installation and setup instructions.
 
